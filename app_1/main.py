@@ -5,7 +5,7 @@ def main() -> None:
 
     import app_1.config as conf
 
-    from .models.atomic import Achievement
+    from .models import Achievement
 
     engine = create_engine(conf.db_str if conf.db_str is not None else conf.db_conn)
 
