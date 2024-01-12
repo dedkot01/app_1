@@ -1,8 +1,8 @@
 def main() -> None:
-    from package_core.package_core import Person
+    from models import Person
 
     p1 = Person("Naruto", "Uzumaki")
-    print(p1)
+    print(f"My name is {p1.first_name} {p1.last_name}!")
 
 
 if __name__ == "__main__":
