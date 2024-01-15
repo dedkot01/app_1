@@ -1,0 +1,13 @@
+[project]
+name = "app-1"
+dynamic = ["version"]
+
+[project.scripts]
+app-1 = "app_1.main:main"
+
+[tool.hatch.version]
+path = "app_1/__init__.py"
+
+[build-system]
+requires = ["hatchling >= 1.13.0"]
+build-backend = "hatchling.build"

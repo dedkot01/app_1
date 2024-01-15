@@ -10,6 +10,9 @@ def main() -> None:
     engine = create_engine(conf.db_str if conf.db_str is not None else conf.db_conn)
 
     with Session(engine) as session:
+        session.connection(execution_options={
+            "schema_translate_map": {"test1": "public"}
+        })
         a1 = session.scalars(sa.select(Achievement).where(Achievement.id == 1)).one_or_none()
     print(a1.description if a1 is not None else "Empty")
 
